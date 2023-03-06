@@ -9,11 +9,11 @@
 import Foundation
 
 class Question {
-    var label: String
+    var title: String
     var answer: Bool
     
-    init(label: String, answer: Bool) {
-        self.label = label
+    init(title: String, answer: Bool) {
+        self.title = title
         self.answer = answer
     }
 }

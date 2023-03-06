@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var trueButton: UIButton!
     @IBOutlet weak var falseButton: UIButton!
     
-    let quiz: [Question] = [Question(label: "Four +  Two is equal to Six", answer: true), Question(label: "Five - Three is greater than One", answer: true), Question(label: "Three + Eight is less than Ten", answer: false)]
+    let quiz: [Question] = [Question(title: "Four +  Two is equal to Six", answer: true), Question(title: "Five - Three is greater than One", answer: true), Question(title: "Three + Eight is less than Ten", answer: false)]
     var questionNumber = 0
     
     override func viewDidLoad() {
@@ -40,7 +40,7 @@ class ViewController: UIViewController {
     }
     
     func updateUI() {
-        questionLabel.text = quiz[questionNumber].label
+        questionLabel.text = quiz[questionNumber].title
     }
     
     func stringToBool(stringToConvert: String) -> Bool {
