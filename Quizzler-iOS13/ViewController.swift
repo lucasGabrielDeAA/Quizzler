@@ -25,8 +25,8 @@ class ViewController: UIViewController {
     }
 
     @IBAction func answerButtonPressed(_ sender: UIButton) {
-        var userAnswer = stringToBool(stringToConvert: sender.currentTitle!)
-        var correct = isAnswerCorrect(questionAnswer: quiz[questionNumber].answer, userAnswer: userAnswer)
+        var userAnswer = (sender.currentTitle! as NSString).boolValue
+        var correct = isAnswerCorrect(quiz[questionNumber].answer, userAnswer)
         
         if correct {
             if questionNumber + 1 < quiz.count {
@@ -43,11 +43,7 @@ class ViewController: UIViewController {
         questionLabel.text = quiz[questionNumber].title
     }
     
-    func stringToBool(stringToConvert: String) -> Bool {
-        return stringToConvert == "True" ? true : false
-    }
-    
-    func isAnswerCorrect(questionAnswer: Bool, userAnswer: Bool) -> Bool {
+    func isAnswerCorrect(_ questionAnswer: Bool, _ userAnswer: Bool) -> Bool {
         return questionAnswer == userAnswer ? true : false
     }
 }
